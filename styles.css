@@ -10,12 +10,14 @@ body {
     font-size: 35px;
     color: rgb(255, 0, 174);
 }
-.hh{
+
+.hh {
     -webkit-text-stroke: 2px #71004f;
-    font-weight:900;
+    font-weight: 900;
 
 }
-.pp{
+
+.pp {
     -webkit-text-stroke: 2px #71004f;
 
     font-size: 50px;
@@ -23,8 +25,7 @@ body {
     font-weight: 800;
 }
 
-body
-
+body,
 .container {
     width: 100%;
     height: 100%;
@@ -37,9 +38,9 @@ body
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.image{
+.image {
     height: 280px;
-    
+
 }
 
 .buttons button {
@@ -61,14 +62,14 @@ body
 
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-#no-button{
-    
+#no-button {
+
 }
 
 .hidden-message {
@@ -81,9 +82,41 @@ body
 }
 
 @keyframes moveNoMessage {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(30px, 30px); }
-    50% { transform: translate(-20px, -20px); }
-    75% { transform: translate(10px, 10px); }
-    100% { transform: translate(0, 0); }
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(30px, 30px);
+    }
+    50% {
+        transform: translate(-20px, -20px);
+    }
+    75% {
+        transform: translate(10px, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+@media only screen and (max-width: 300px) {
+    body {
+        background-size: cover; /* Acoperă întregul ecran */
+    }
+    image {
+        padding-top: 200px;
+    }
+    body {
+        background-size: cover;
+        padding-top: env(safe-area-inset-top); /* Adaugă spațiu pentru bara de search pe iOS */
+    }
+
+    .container {
+        height: calc(100% - env(safe-area-inset-top)); /* Ajustează înălțimea container-ului pentru a se potrivi spațiului disponibil */
+    }
+
+    .buttons button {
+        font-size: 20px; /* Reduce dimensiunea fontului pentru a se potrivi pe ecrane mai mici */
+    }
 }
