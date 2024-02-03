@@ -46,20 +46,3 @@ function showMessage(response) {
         document.getElementById("yesButton").remove();
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    var noButton = document.getElementById("no-button");
-
-    if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-        // Dispozitiv mobil, folosim onclick
-        noButton.addEventListener("click", function () {
-            showMessage('No');
-        });
-    } else {
-        // Nu este un dispozitiv mobil, folosim onmouseover
-        noButton.addEventListener("mouseover", function () {
-            showMessage('No');
-        });
-    }
-});
-
