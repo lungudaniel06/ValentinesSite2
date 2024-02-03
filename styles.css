@@ -6,21 +6,23 @@ body {
     justify-content: space-evenly;
     height: 100vh;
     margin: 0;
-    background: url('images/image.jpg') repeat;
+    background: url('images/img.png') center;
     font-size: 35px;
-    color: rgb(255, 0, 174);
+    color: rgb(16, 15, 15);
 }
 
 .hh {
-    -webkit-text-stroke: 2px #71004f;
+    -webkit-text-stroke: 2px #100f0f;
     font-weight: 900;
+    backdrop-filter: blur(2px);
 }
 
 .pp {
-    -webkit-text-stroke: 2px #71004f;
+    -webkit-text-stroke: 2px #100f0f;
     font-size: 50px;
     font-style: oblique;
     font-weight: 800;
+    backdrop-filter: blur(2px);
 }
 
 .container {
@@ -31,8 +33,7 @@ body {
     align-items: center;
     text-align: center;
     background-color: transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
 }
 
 .image {
@@ -93,9 +94,15 @@ body {
 }
 
 /* Media Query for smaller screens */
+/* Media Query for smaller screens */
 @media only screen and (max-width: 600px) {
     body {
         font-size: 20px; /* Adjust the font size for smaller screens */
+        height: auto; /* Remove fixed height on mobile */
+    }
+
+    .container {
+        height: auto; /* Remove fixed height on mobile */
     }
 
     .buttons {
@@ -104,5 +111,21 @@ body {
 
     .buttons button {
         margin: 5px; /* Reduce button margin for smaller screens */
+    }
+
+    .image {
+        height: auto; /* Adjust image height on mobile */
+        max-width: 100%; /* Make sure image doesn't exceed screen width */
+        padding-top: 10px;
+    }
+
+    /* Add specific styles for iOS to position content above the Safari search bar */
+    @supports (-webkit-overflow-scrolling: touch) and (color: var(--main-color)) {
+        body {
+            padding-top: constant(safe-area-inset-top); /* iOS specific - for devices with notch or safe area */
+            padding-top: env(safe-area-inset-top); /* iOS specific - for devices with notch or safe area */
+            margin-top: constant(safe-area-inset-top); /* iOS specific - for devices with notch or safe area */
+            margin-top: env(safe-area-inset-top); /* iOS specific - for devices with notch or safe area */
+        }
     }
 }
