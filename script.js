@@ -3,6 +3,7 @@ function showMessage(response) {
         const noButton = document.getElementById("no-button");
         const maxWidth = window.innerWidth - noButton.offsetWidth;
         const maxHeight = window.innerHeight - noButton.offsetHeight;
+        console.log(maxWidth, maxHeight)
 
         // Set button position to absolute
         noButton.style.position = "absolute";
@@ -13,12 +14,16 @@ function showMessage(response) {
         // Generate random coordinates within the visible container
         let randomX = 0;
         let randomY = 0;
-        const generateRandomCoordinates = () => {
+        function generateRandomCoordinates() {
             randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
-            randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
+
+            // Generează coordonate doar în partea de sus a ecranului
+            randomY = Math.max(0, Math.floor(Math.random() * (maxHeight / 2)));
+
             noButton.style.left = randomX + "px";
             noButton.style.top = randomY + "px";
         }
+
 
         // Apply new coordinates to the button
         generateRandomCoordinates();
