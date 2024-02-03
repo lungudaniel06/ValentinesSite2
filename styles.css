@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lobster', cursive; /* Change to a romantic cursive font */
+    font-family: 'Lobster', cursive;
     background-color: #ffdde1;
     display: flex;
     align-items: center;
@@ -10,20 +10,18 @@ body {
     font-size: 35px;
     color: rgb(255, 0, 174);
 }
-.hh{
-    -webkit-text-stroke: 2px #71004f;
-    font-weight:900;
 
+.hh {
+    -webkit-text-stroke: 2px #71004f;
+    font-weight: 900;
 }
-.pp{
-    -webkit-text-stroke: 2px #71004f;
 
+.pp {
+    -webkit-text-stroke: 2px #71004f;
     font-size: 50px;
     font-style: oblique;
     font-weight: 800;
 }
-
-body
 
 .container {
     width: 100%;
@@ -37,38 +35,34 @@ body
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.image{
+.image {
     height: 280px;
-
 }
 
 .buttons button {
     background-color: #ff4d79;
     color: #fff;
-    padding: 10px 30px;
+    padding: 8px 20px; /* Adjusted padding for smaller buttons */
     border: none;
     border-radius: 10px;
-    margin: 10px;
-    font-size: 26px;
+    margin: 5px; /* Adjusted margin for smaller buttons */
+    font-size: 20px; /* Adjusted font size for smaller buttons */
     cursor: pointer;
     position: relative;
-    font-family: 'Lobster', cursive; /* Change to a romantic cursive font */
-
+    font-family: 'Lobster', cursive;
 }
 
 .buttons button:hover {
     background-color: #7c1f37;
-
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-#no-button{
-
+#no-button {
 }
 
 .hidden-message {
@@ -81,15 +75,34 @@ body
 }
 
 @keyframes moveNoMessage {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(30px, 30px); }
-    50% { transform: translate(-20px, -20px); }
-    75% { transform: translate(10px, 10px); }
-    100% { transform: translate(0, 0); }
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(30px, 30px);
+    }
+    50% {
+        transform: translate(-20px, -20px);
+    }
+    75% {
+        transform: translate(10px, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
-@media only screen and (max-width: 300px) {
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
     body {
-        background-size: cover; /* Acoperă întregul ecran */
+        font-size: 20px; /* Adjust the font size for smaller screens */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically for smaller screens */
+    }
+
+    .buttons button {
+        margin: 5px; /* Reduce button margin for smaller screens */
     }
 }
