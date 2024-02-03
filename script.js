@@ -8,7 +8,7 @@ function showMessage(response) {
     noButton.style.position = "absolute";
 
     // Change image source to "gun.gif"
-    document.getElementsByClassName("image")[0].src = "images/gun.gif";
+    //document.getElementsByClassName("image")[0].src = "images/gun.gif";
 
     // Generate random coordinates within the visible container
     let randomX = 0;
@@ -24,15 +24,10 @@ function showMessage(response) {
     generateRandomCoordinates();
 
     // Update text content and hide name message
-    document.getElementById("question").textContent =
-        "Nice try, but you can't escape that easily!";
-    document.getElementById("name").style.display = "none";
-    document.getElementById("no-message").style.display;
-
-    // Optional: You can also add a timeout to reset the position after a few seconds
-    setTimeout(() => {
-      generateRandomCoordinates();
-    }, 500);
+    // document.getElementById("question").textContent =
+    //     "Nice try, but you can't escape that easily!";
+    // document.getElementById("name").style.display = "none";
+    // document.getElementById("no-message").style.display;
   }
 
   if (response === "Yes") {
