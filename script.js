@@ -1,48 +1,48 @@
 function showMessage(response) {
-  if (response === "No") {
-    const noButton = document.getElementById("no-button");
-    const maxWidth = window.innerWidth - noButton.offsetWidth;
-    const maxHeight = window.innerHeight - noButton.offsetHeight;
+    if (response === "No") {
+        const noButton = document.getElementById("no-button");
+        const maxWidth = window.innerWidth - noButton.offsetWidth;
+        const maxHeight = window.innerHeight - noButton.offsetHeight;
 
-    // Set button position to absolute
-    noButton.style.position = "absolute";
+        // Set button position to absolute
+        noButton.style.position = "absolute";
 
-    // Change image source to "gun.gif"
-    //document.getElementsByClassName("image")[0].src = "images/gun.gif";
+        // Change image source to "gun.gif"
+        //document.getElementsByClassName("image")[0].src = "images/gun.gif";
 
-    // Generate random coordinates within the visible container
-    let randomX = 0;
-    let randomY = 0;
-    const generateRandomCoordinates = () => {
-      randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
-      randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
-      noButton.style.left = randomX + "px";
-      noButton.style.top = randomY + "px";
+        // Generate random coordinates within the visible container
+        let randomX = 0;
+        let randomY = 0;
+        const generateRandomCoordinates = () => {
+            randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
+            randomY = Math.max(0, Math.floor(Math.random() * maxHeight));
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        }
+
+        // Apply new coordinates to the button
+        generateRandomCoordinates();
+
+        // Update text content and hide name message
+        // document.getElementById("question").textContent =
+        //     "Nice try, but you can't escape that easily!";
+        // document.getElementById("name").style.display = "none";
+        // document.getElementById("no-message").style.display;
     }
 
-    // Apply new coordinates to the button
-    generateRandomCoordinates();
+    if (response === "Yes") {
+        // Remove name message and no button
+        document.getElementById("name").remove();
+        document.getElementById("no-button").remove();
 
-    // Update text content and hide name message
-    // document.getElementById("question").textContent =
-    //     "Nice try, but you can't escape that easily!";
-    // document.getElementById("name").style.display = "none";
-    // document.getElementById("no-message").style.display;
-  }
+        // Update text content, show message, and change image source to "dance.gif"
+        const yesMessage = document.getElementById("question");
+        yesMessage.textContent = "LESGOOO see you on the 14th babygirl😘😘";
+        yesMessage.style.display = "block";
+        yesMessage.style.fontStyle = "normal";
+        document.getElementsByClassName("image")[0].src = "images/dance.gif";
 
-  if (response === "Yes") {
-    // Remove name message and no button
-    document.getElementById("name").remove();
-    document.getElementById("no-button").remove();
-
-    // Update text content, show message, and change image source to "dance.gif"
-    const yesMessage = document.getElementById("question");
-    yesMessage.textContent = "LESGOOO see you on the 14th babygirl😘😘";
-    yesMessage.style.display = "block";
-    yesMessage.style.fontStyle = "normal";
-    document.getElementsByClassName("image")[0].src = "images/dance.gif";
-
-    // Remove yes button
-    document.getElementById("yesButton").remove();
-  }
+        // Remove yes button
+        document.getElementById("yesButton").remove();
+    }
 }
