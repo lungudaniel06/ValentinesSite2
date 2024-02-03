@@ -51,8 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var noButton = document.getElementById("no-button");
 
     if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-        // Dispozitiv mobil, folosim onclick
-        noButton.addEventListener("click", function () {
+        // Dispozitiv mobil, folosim ontouchstart
+        noButton.addEventListener("touchstart", function (event) {
+            event.preventDefault(); // Previne comportamentul implicit de click
             showMessage('No');
         });
     } else {
