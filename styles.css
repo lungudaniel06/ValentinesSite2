@@ -47,7 +47,7 @@ body {
     border: none;
     border-radius: 10px;
     margin: 5px; /* Adjusted margin for smaller buttons */
-    font-size: 20px; /* Adjusted font size for smaller buttons */
+    font-size: 25px; /* Adjusted font size for smaller buttons */
     cursor: pointer;
     position: relative;
     font-family: 'Lobster', cursive;
